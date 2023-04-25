@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Firebase Image Upload using HTML and JavaScript</title>
-   <style>
-      #photo{
-         margin-top: 200px;
-         margin-left: 450px;
-      }
-      #upload{
-         margin-top: 20px;
-         margin-left: 450px;
-      }
-   </style>
+<title></title>
 </head>
 <body>
    <input type="file" id="photo" /></br>
@@ -36,21 +26,10 @@
    firebase.initializeApp(firebaseConfig);
    console.log(firebase);
    function uploadImage() {
-      const ref = firebase.storage().ref();
-      const file = document.querySelector("#photo").files[0];
-      const name = +new Date() + "-" + file.name;
-      const metadata = {
-         contentType: file.type
-      };
-      const task = ref.child(name).put(file, metadata);task
-      .then(snapshot => snapshot.ref.getDownloadURL())
-      .then(url => {
-      console.log(url);
-      alert('image uploaded successfully');
-      document.querySelector("#image").src = url;
-   })
-   .catch(console.error);
+      const file = document.getElementById("photo").files[0];
+      const storageRef = firebase.storage().ref();
+      const imageRef = storageRef.child('images/' + file.name);
+      const uploadTask = imageRef.put(file);
    }
-   const errorMsgElement = document.querySelector('span#errorMsg');
 </script>
 </html>
