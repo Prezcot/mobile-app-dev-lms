@@ -1,0 +1,28 @@
+<html>
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+</body>
+<script>
+//const firebase = require('firebase');
+//require('firebase/firestore');
+
+firebase.initializeApp({
+  apiKey: "AIzaSyD7zRop9urZtLzGZaCNO2crLhmwpeQv3yM",
+  authDomain: "test-21d0c.firebaseapp.com",
+  projectId: "test-21d0c",
+  storageBucket: "test-21d0c.appspot.com",
+  messagingSenderId: "27154097092",
+  appId: "1:27154097092:web:f76245efca2094df2f7a91",
+  measurementId: "G-1GW9QRNZ9W"
+});
+
+const db = firebase.firestore();
+const myCollection = db.collection('locations');
+const myVariables = {
+  latitude: 20,
+  longitude: 40
+};
+myCollection.doc('7pSbn8NQfticJQl13sBg').set(myVariables);
+</script>
+</html>
