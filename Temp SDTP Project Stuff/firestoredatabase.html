@@ -1,7 +1,10 @@
 <html>
 <body>
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+
+<!-- Add Firestore for database -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
 <script>
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://support.google.com/firebase/answer/7015592
@@ -18,21 +21,14 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-// Initialize Cloud Firestore and get a reference to the service
+//This command will get a reference to the firebase firestore database
 const db = firebase.firestore();
 
-// Add a new document in collection "cities"
-db.collection("locations").doc("7pSbn8NQfticJQl13sBg").set({
-    latitude: 20,
-    longitude: 30
+//Add a new document with a given id to the "locations" collection
+db.collection("locations").doc("").set({
+  latitude: 70,
+  longitude: 60
 })
-.then(() => {
-    console.log("Document successfully written!");
-})
-.catch((error) => {
-    console.error("Error writing document: ", error);
-});
 </script>
 </body>
 </html>
