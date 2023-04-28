@@ -3,7 +3,7 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 <!-- Create a div container to hold the map -->
-<div id="mapid" style="height: 700px;"></div>
+<div id="mapid" style="height: 500px;"></div>
 
 <script>
   // Create a Leaflet map centered on the user's location
@@ -23,6 +23,8 @@
     L.marker(e.latlng).addTo(map)
       .bindPopup("You are here!")
       .openPopup();
+	console.log(e.latlng.lat);
+	console.log(e.latlng.lng);
   }
   map.on('locationfound', onLocationFound);
 </script>
