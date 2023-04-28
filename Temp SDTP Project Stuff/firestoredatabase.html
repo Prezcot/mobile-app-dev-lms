@@ -25,7 +25,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 //Add a new document with a given id to the "locations" collection
-db.collection("locations").doc("").set({
+db.collection("locations").doc("Garbage Located").set({
   latitude: 70,
   longitude: 60
 })
