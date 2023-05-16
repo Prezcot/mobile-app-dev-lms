@@ -39,46 +39,8 @@ public class MainActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String checkname = name.getText().toString();
-                String checkpassword = pass.getText().toString();
-
-                if(checkname.isEmpty() || checkpassword.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Enter name and password",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    reff.child("Account").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(checkname)){
-                                String password = snapshot.child(checkname).child("password").getValue(String.class);
-                                if(password.equals(checkpassword)){
-                                    String access = snapshot.child(checkname).child("account_type").getValue(String.class);
-                                    Toast.makeText(MainActivity.this,access,Toast.LENGTH_SHORT).show();
-                                    if(access.equals("admin")){
-                                        startActivity(new Intent(MainActivity.this,home2.class));
-                                        finish();
-                                    }
-                                    else{
-                                        startActivity(new Intent(MainActivity.this,home1.class));
-                                        finish();
-                                    }
-                                }
-                                else{
-                                    Toast.makeText(MainActivity.this,"Incorrect password",Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                            else{
-                                Toast.makeText(MainActivity.this, "Incorrect user name",Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-                }
+                Intent intent = new Intent(MainActivity.this, l_course_work_creation.class);
+                startActivity(intent);
             }
         });
 

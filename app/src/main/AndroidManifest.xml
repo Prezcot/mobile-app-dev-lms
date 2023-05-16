@@ -23,6 +23,9 @@
             android:name=".home1"
             android:exported="false" />
         <activity
+            android:name=".l_course_work_creation"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
