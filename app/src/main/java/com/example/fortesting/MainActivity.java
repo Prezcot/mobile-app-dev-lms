@@ -21,28 +21,12 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     EditText name,pass;
-    Button loginbtn;
-
-    DatabaseReference reff;
-
     public static String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        name =findViewById(R.id.name);
-        pass = findViewById(R.id.pass);
-        loginbtn = findViewById(R.id.login);
-        reff = FirebaseDatabase.getInstance().getReference();
-
-        loginbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, l_course_work_creation.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }
