@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
@@ -32,6 +34,28 @@ public class LecturerCourseworkSubmission extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.l_course_work_view);
+
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.navigation_dashboard) {
+                    startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                    finish();
+                    return true;
+                } else if (item.getItemId() == R.id.navigation_calendar) {
+                    //have the calendar function run here
+                    return true;
+                } else if (item.getItemId() == R.id.navigation_results) {
+                    startActivity(new Intent(getApplicationContext(), Results.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         coursework = findViewById(R.id.Courseworktitle);
         listView = findViewById(R.id.ListCoursework);

@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -50,6 +52,29 @@ public class CreateCoursework extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.l_course_work_creation);
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.navigation_dashboard) {
+                    startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                    finish();
+                    return true;
+                } else if (item.getItemId() == R.id.navigation_calendar) {
+                    //have the calendar function run here
+                    return true;
+                } else if (item.getItemId() == R.id.navigation_results) {
+                    startActivity(new Intent(getApplicationContext(), Results.class));
+                    finish();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
         title = findViewById(R.id.entertitle);
         description = findViewById(R.id.enterdescripton);
         date = findViewById(R.id.enterdate);
