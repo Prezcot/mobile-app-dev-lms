@@ -99,26 +99,32 @@
 
     <Button
         android:id="@+id/selectguide"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="21dp"
+        android:layout_marginEnd="39dp"
         android:backgroundTint="#5C7474"
         android:text="Choose File"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lecturerUploadFileName"
+        app:layout_constraintEnd_toStartOf="@+id/createcoursework"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterdate" />
 
     <Button
         android:id="@+id/createcoursework"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
+        android:layout_marginStart="39dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#5C7474"
         android:text="Create"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lecturerUploadFileName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectguide"
         app:layout_constraintTop_toBottomOf="@+id/enterdate" />
 
     <EditText
@@ -132,6 +138,20 @@
         android:text="Pick Deadline Date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <EditText
+        android:id="@+id/lecturerUploadFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="118dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        android:text="No file"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectguide" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

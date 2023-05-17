@@ -94,19 +94,18 @@
         app:layout_constraintStart_toEndOf="@+id/coursework"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
     <ListView
         android:id="@+id/info"
-        android:layout_width="407dp"
-        android:layout_height="0dp"
+        android:layout_width="394dp"
+        android:layout_height="386dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leture" />
+        app:layout_constraintTop_toBottomOf="@+id/coursework" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
