@@ -44,7 +44,7 @@ public class MathLecturer extends AppCompatActivity {
     StorageReference folderRef,mfolderref;
     DatabaseReference dbreff;
 
-    public String show_list;
+    public String show_list="none";
 
     Button lectures, coursework,miscellaneous,add;
 
