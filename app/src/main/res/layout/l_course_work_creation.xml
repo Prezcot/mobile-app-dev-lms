@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_bar_menu">
+        app:menu="@menu/bottom_nav_bar_lecture_menu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
