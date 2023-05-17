@@ -78,6 +78,8 @@ public class LecturerCourseworkView extends AppCompatActivity {
         coursework = findViewById(R.id.Courseworktitle);
         listView = findViewById(R.id.ListCoursework);
 
+        coursework.setText(MainActivity.coursework_name);
+
         ArrayList<String> fileList = new ArrayList<>();
 
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/"+MainActivity.coursework_name+"/submissions/");

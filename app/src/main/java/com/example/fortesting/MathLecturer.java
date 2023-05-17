@@ -264,9 +264,8 @@ public class MathLecturer extends AppCompatActivity {
                     MainActivity.coursework_name = fileName;
                     startActivity(new Intent(MathLecturer.this, LecturerCourseworkView.class));
                     finish();
-                } else if (show_list.equals("miscellaneous")) {
+                } else if (show_list.equals("Miscellaneous")) {
                     StorageReference fileRef = mfolderref.child(fileName);
-
 
 
                     fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
