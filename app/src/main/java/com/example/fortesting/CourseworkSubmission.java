@@ -1,4 +1,4 @@
-package com.example.madprojectfinal;
+package com.example.fortesting;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

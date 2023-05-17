@@ -24,13 +24,13 @@
             android:name=".CreateCoursework"
             android:exported="false" />
         <activity
-            android:name=".TransfigurationStudent"
+            android:name=".MathStudent"
             android:exported="false" />
         <activity
             android:name=".CourseworkSubmission"
             android:exported="false" />
         <activity
-            android:name=".TransfigurationLecturer"
+            android:name=".MathLecturer"
             android:exported="false" />
         <activity
             android:name=".StudentDashboard"
@@ -38,15 +38,6 @@
         <activity
             android:name=".LecturerDashboard"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

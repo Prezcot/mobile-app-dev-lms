@@ -1,4 +1,4 @@
-package com.example.madprojectfinal;
+package com.example.fortesting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +23,7 @@ public class StudentDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 MainActivity.module = "Mathematics";
-                startActivity(new Intent(StudentDashboard.this,TransfigurationStudent.class));
+                startActivity(new Intent(StudentDashboard.this, MathStudent.class));
                 finish();
             }
         });
