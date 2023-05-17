@@ -28,7 +28,7 @@
         android:translationX="-70dp" />
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +36,6 @@
         android:text="PlaceHolder"
         android:textColor="#D8D8D8"
         android:textSize="30sp"
-        android:translationX="-50dp" />
+        android:translationX="-50dp" />-->
 
 </androidx.appcompat.widget.Toolbar>
