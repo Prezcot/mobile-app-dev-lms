@@ -22,8 +22,8 @@ public class StudentDashboard extends AppCompatActivity {
         transfiguration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.module = "transfiguration";
-                startActivity(new Intent(StudentDashboard.this,StudentDashboard.class));
+                MainActivity.module = "Mathematics";
+                startActivity(new Intent(StudentDashboard.this,TransfigurationStudent.class));
                 finish();
             }
         });

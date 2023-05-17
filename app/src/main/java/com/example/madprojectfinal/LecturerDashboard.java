@@ -11,7 +11,7 @@ public class LecturerDashboard extends AppCompatActivity {
 
     Button transfiguration;
 
-    public static String module;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class LecturerDashboard extends AppCompatActivity {
         transfiguration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                module = "Transfiguration";
+                MainActivity.module = "Mathematics";
                 startActivity(new Intent(LecturerDashboard.this,TransfigurationLecturer.class));
                 finish();
             }

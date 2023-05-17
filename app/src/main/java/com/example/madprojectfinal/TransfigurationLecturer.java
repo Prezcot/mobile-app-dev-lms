@@ -65,7 +65,7 @@ public class TransfigurationLecturer extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(show_list.equals("lecture")){
+                if(show_list.equals("lectures")){
                     selectpdf();
                 }
                 if(show_list.equals("coursework")){
@@ -105,7 +105,7 @@ public class TransfigurationLecturer extends AppCompatActivity {
                 fileList.clear();
 
                 show_list = "coursework";
-                dbreff.child("Module").child(MainActivity.module).child("submission").addListenerForSingleValueEvent(new ValueEventListener() {
+                dbreff.child("Module").child(MainActivity.module).child("Coursework").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
@@ -129,7 +129,7 @@ public class TransfigurationLecturer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fileList.clear();
-                show_list = "miscellaneous";
+                show_list = "Miscellaneous";
                 mfolderref.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
                     @Override
                     public void onSuccess(ListResult listResult) {
@@ -231,6 +231,7 @@ public class TransfigurationLecturer extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("Range")
     public void uploadPDF(Uri data){
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Uploading");

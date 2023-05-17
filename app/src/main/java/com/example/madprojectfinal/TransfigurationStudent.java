@@ -34,7 +34,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 
 public class TransfigurationStudent extends AppCompatActivity {
-    StorageReference folderRef;
+    StorageReference folderRef,mfolderref;
     DatabaseReference dbreff;
 
     public String show_list;
@@ -42,7 +42,7 @@ public class TransfigurationStudent extends AppCompatActivity {
     Button lectures, coursework,miscellaneous;
 
 
-    String originalFileName = null;
+
 
 
     @Override
@@ -52,6 +52,7 @@ public class TransfigurationStudent extends AppCompatActivity {
 
         dbreff = FirebaseDatabase.getInstance().getReference();
         folderRef = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Lecture/");
+        mfolderref = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Miscellaneous/");
         ListView listView = findViewById(R.id.info);
         lectures = findViewById(R.id.lectures);
         coursework = findViewById(R.id.coursework);
@@ -92,7 +93,7 @@ public class TransfigurationStudent extends AppCompatActivity {
                 fileList.clear();
 
                 show_list = "coursework";
-                dbreff.child("Module").child(MainActivity.module).child("submission").addListenerForSingleValueEvent(new ValueEventListener() {
+                dbreff.child("Module").child(MainActivity.module).child("Coursework").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
@@ -110,6 +111,31 @@ public class TransfigurationStudent extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+        miscellaneous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fileList.clear();
+                show_list = "Miscellaneous";
+                mfolderref.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+
+                        for (StorageReference item : listResult.getItems()) {
+                            fileList.add(item.getName());
+                        }
+
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(TransfigurationStudent.this, android.R.layout.simple_list_item_1, fileList);
+
+                        listView.setAdapter(adapter);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
             }
         });
 
@@ -148,6 +174,30 @@ public class TransfigurationStudent extends AppCompatActivity {
                     MainActivity.coursework_name = fileName;
                     startActivity(new Intent(TransfigurationStudent.this,CourseworkSubmission.class));
                     finish();
+                } else if (show_list.equals("Miscellaneous")) {
+                    StorageReference fileRef = mfolderref.child(fileName);
+
+                    // Create a local file to save the downloaded file
+
+                    fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            // Use the URL with Uri.parse()
+                            String fileUrl = uri.toString();
+                            Uri parsedUri = Uri.parse(fileUrl);
+                            Intent intent = new Intent(Intent.ACTION_VIEW);
+                            intent.setType("application/pdf");
+                            intent.setData(parsedUri);
+                            startActivity(intent);
+                            Toast.makeText(TransfigurationStudent.this, "File downloaded", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(TransfigurationStudent.this, "File download failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
         });
