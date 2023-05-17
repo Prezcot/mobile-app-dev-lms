@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -61,8 +62,18 @@ public class MathLecturer extends AppCompatActivity {
         miscellaneous= findViewById(R.id.miscellaneous);
         add = findViewById(R.id.add);
 
+
         ArrayList<String> fileList = new ArrayList<>();
 
+        View includedLayout = findViewById(R.id.nav_bar);
+        ImageButton back = includedLayout.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MathLecturer.this, Dashboard.class));
+                finish();
+            }
+        });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -16,9 +16,8 @@
         android:translationY="1dp" />
 
 
-
-
     <ImageButton
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"

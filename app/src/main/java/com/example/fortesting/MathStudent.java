@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -53,6 +54,16 @@ public class MathStudent extends AppCompatActivity {
 
 
         ArrayList<String> fileList = new ArrayList<>();
+
+        View includedLayout = findViewById(R.id.nav_bar);
+        ImageButton back = includedLayout.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MathStudent.this, Dashboard.class));
+                finish();
+            }
+        });
 
 
         lectures.setOnClickListener(new View.OnClickListener() {

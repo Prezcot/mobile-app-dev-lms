@@ -29,26 +29,7 @@ public class Dashboard extends AppCompatActivity {
         TextView textView = includedLayout.findViewById(R.id.textView2);
         textView.setText(MainActivity.username);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_dashboard:
-                        // Handle click on the "Dashboard" item
-                        // Navigate to the corresponding page or perform desired actions
-                        return true;
-                    case R.id.navigation_calendar:
-                        // Handle click on the "Calendar" item
-                        // Navigate to the corresponding page or perform desired actions
-                        return true;
-                    case R.id.navigation_results:
-                        startActivity(new Intent(Dashboard.this,Results.class));
-                        finish();
-                }
-                return false;
-            }
-        });
+
 
         Math.setOnClickListener(new View.OnClickListener() {
             @Override

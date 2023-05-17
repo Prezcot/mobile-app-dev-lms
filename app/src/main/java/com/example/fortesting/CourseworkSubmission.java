@@ -14,6 +14,7 @@ import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,6 +71,22 @@ public class CourseworkSubmission extends AppCompatActivity {
         update_page();
 
         ArrayList<String> fileList = new ArrayList<>();
+
+        View includedLayout = findViewById(R.id.nav_bar);
+        ImageButton back = includedLayout.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(MainActivity.account_type.equals("admin")){
+                    startActivity(new Intent(CourseworkSubmission.this, MathLecturer.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(CourseworkSubmission.this, MathStudent.class));
+                    finish();
+                }
+
+            }
+        });
         guidereff.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
             public void onSuccess(ListResult listResult) {
