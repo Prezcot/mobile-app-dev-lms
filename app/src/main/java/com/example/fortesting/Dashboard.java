@@ -20,7 +20,12 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.s_dashboard);
+        if(MainActivity.account_type.equals("admin")){
+            setContentView(R.layout.l_dashboard);
+        }else{
+            setContentView(R.layout.s_dashboard);
+        }
+
 
         Math = findViewById(R.id.math);
         View includedLayout = findViewById(R.id.nav_bar);
