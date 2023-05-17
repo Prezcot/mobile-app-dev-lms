@@ -63,7 +63,8 @@ public class CreateCoursework extends AppCompatActivity {
                     finish();
                     return true;
                 } else if (item.getItemId() == R.id.navigation_calendar) {
-                    //have the calendar function run here
+                    startActivity(new Intent(getApplicationContext(), WebCalendar.class));
+                    finish();
                     return true;
                 } else if (item.getItemId() == R.id.navigation_results) {
                     startActivity(new Intent(getApplicationContext(), Results.class));
