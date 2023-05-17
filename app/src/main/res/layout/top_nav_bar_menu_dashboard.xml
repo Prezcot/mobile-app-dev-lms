@@ -9,9 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:scaleX="1.1"
-        android:scaleY="1.1"
-        android:src="@drawable/profile_pic"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:src="@drawable/logout"
+        android:id="@+id/logout"
         android:translationX="320dp"
         android:translationY="1dp" />
 

@@ -78,7 +78,15 @@ public class CourseworkSubmission extends AppCompatActivity {
                 return false;
             }
         });
-
+        View includedLayout = findViewById(R.id.nav_bar);
+        ImageButton logout = includedLayout.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
 
         selectfile = findViewById(R.id.selectguide);
         submit = findViewById(R.id.createcoursework);
@@ -98,7 +106,6 @@ public class CourseworkSubmission extends AppCompatActivity {
 
         ArrayList<String> fileList = new ArrayList<>();
 
-        View includedLayout = findViewById(R.id.nav_bar);
         ImageButton back = includedLayout.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

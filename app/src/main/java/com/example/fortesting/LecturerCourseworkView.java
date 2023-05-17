@@ -66,6 +66,15 @@ public class LecturerCourseworkView extends AppCompatActivity {
             }
         });
 
+        ImageButton logout = includedLayout.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+        
         coursework = findViewById(R.id.Courseworktitle);
         listView = findViewById(R.id.ListCoursework);
 

@@ -20,7 +20,6 @@ public class Dashboard extends AppCompatActivity {
     ImageButton Math;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +32,16 @@ public class Dashboard extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
+
+        ImageButton logout = includedLayout.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -52,7 +61,6 @@ public class Dashboard extends AppCompatActivity {
                 return false;
             }
         });
-
 
         Math.setOnClickListener(new View.OnClickListener() {
             @Override
