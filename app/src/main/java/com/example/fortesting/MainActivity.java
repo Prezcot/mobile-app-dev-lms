@@ -60,14 +60,8 @@ public class MainActivity extends AppCompatActivity {
                                     username = checkname;
                                     account_type = access;
                                     Toast.makeText(MainActivity.this,access,Toast.LENGTH_SHORT).show();
-                                    if(access.equals("admin")){
-                                        startActivity(new Intent(MainActivity.this,LecturerDashboard.class));
-                                        finish();
-                                    }
-                                    else{
-                                        startActivity(new Intent(MainActivity.this,StudentDashboard.class));
-                                        finish();
-                                    }
+                                    startActivity(new Intent(MainActivity.this,Dashboard.class));
+                                    finish();
                                 }
                                 else{
                                     Toast.makeText(MainActivity.this,"Incorrect password",Toast.LENGTH_SHORT).show();

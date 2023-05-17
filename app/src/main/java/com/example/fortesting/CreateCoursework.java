@@ -7,19 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -159,7 +156,7 @@ public class CreateCoursework extends AppCompatActivity {
                 dbreff.child("Module").child(MainActivity.module).child("Coursework").child(title.getText().toString()).child("Deadline").child("month").setValue(String.valueOf(month_));
                 dbreff.child("Module").child(MainActivity.module).child("Coursework").child(title.getText().toString()).child("Deadline").child("year").setValue(String.valueOf(year_));
                 Toast.makeText(CreateCoursework.this, "File uploaded",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(CreateCoursework.this,StudentDashboard.class));
+                startActivity(new Intent(CreateCoursework.this, Dashboard.class));
                 finish();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {

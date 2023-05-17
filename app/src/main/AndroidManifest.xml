@@ -33,7 +33,7 @@
             android:name=".MathLecturer"
             android:exported="false" />
         <activity
-            android:name=".StudentDashboard"
+            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".LecturerDashboard"
