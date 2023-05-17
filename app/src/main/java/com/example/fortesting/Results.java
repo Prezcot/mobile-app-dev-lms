@@ -34,7 +34,7 @@ public class Results extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigation_results);
-        
+
         TableLayout tableLayout = findViewById(R.id.results);
 
         TableRow row2 = (TableRow) tableLayout.getChildAt(1);
