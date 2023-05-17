@@ -14,10 +14,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/Theme.Fortesting"
         tools:targetApi="31">
         <activity
-            android:name=".l_course_work_creation"
+            android:name=".Results"
+            android:exported="false" />
+        <activity
+            android:name=".CreateCoursework"
+            android:exported="false" />
+        <activity
+            android:name=".TransfigurationStudent"
+            android:exported="false" />
+        <activity
+            android:name=".CourseworkSubmission"
+            android:exported="false" />
+        <activity
+            android:name=".TransfigurationLecturer"
+            android:exported="false" />
+        <activity
+            android:name=".StudentDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".LecturerDashboard"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

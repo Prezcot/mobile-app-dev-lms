@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
     <color name="colorPrimary">#008577</color>
 	<color name="colorPrimaryDark">#00574B</color>
 	<color name="colorAccent">#D81B60</color>
@@ -15,4 +16,6 @@
 	<color name="rectangle_17_color">#5C7474</color>
 	<color name="care_of_magical_color">#000000</color>
 	<color name="open_all_color">#FFFFFF</color>
+=======
+>>>>>>> 4ea4c893c9bd0871e4c05781328212c4fea371a4
 </resources>
