@@ -57,7 +57,7 @@ public class CourseworkSubmission extends AppCompatActivity {
         submit = findViewById(R.id.createcoursework);
 
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");
-        guidereff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/guidelines/");
+        guidereff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/"+MainActivity.coursework_name+"/guidelines/");
         dbreff = FirebaseDatabase.getInstance().getReference();
 
         textView = findViewById(R.id.textView3);
@@ -70,26 +70,27 @@ public class CourseworkSubmission extends AppCompatActivity {
         update_page();
 
         ArrayList<String> fileList = new ArrayList<>();
+        guidereff.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+            @Override
+            public void onSuccess(ListResult listResult) {
+
+                for (StorageReference item : listResult.getItems()) {
+                    fileList.add(item.getName());
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
 
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                guidereff.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
-                    @Override
-                    public void onSuccess(ListResult listResult) {
 
-                        for (StorageReference item : listResult.getItems()) {
-                            fileList.add(item.getName());
-                        }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                    }
-                });
                 String file_name = fileList.get(0);
                 StorageReference fileRef = guidereff.child(file_name);
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {

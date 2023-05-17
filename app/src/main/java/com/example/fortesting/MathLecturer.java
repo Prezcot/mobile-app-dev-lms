@@ -188,7 +188,7 @@ public class MathLecturer extends AppCompatActivity {
                 }
                 else if (show_list.equals("coursework")){
                     MainActivity.coursework_name = fileName;
-                    startActivity(new Intent(MathLecturer.this,CourseworkSubmission.class));
+                    startActivity(new Intent(MathLecturer.this,LecturerCourseworkSubmission.class));
                     finish();
                 } else if (show_list.equals("miscellaneous")) {
                     StorageReference fileRef = mfolderref.child(fileName);
