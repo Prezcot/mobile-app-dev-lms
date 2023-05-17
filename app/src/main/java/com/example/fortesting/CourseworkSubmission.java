@@ -12,10 +12,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,21 +25,23 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CourseworkSubmission extends AppCompatActivity {
 
-    TextView filename,textView,description,deadline,submission_status;
+    TextView filename,textView,description,deadline,guide;
 
     Button selectfile,submit;
 
     String originalFileName,day,month,year;
     DatabaseReference dbreff;
-    StorageReference cwreff;
+    StorageReference cwreff,guidereff;
 
     int upload_status = 0;
 
@@ -53,18 +57,62 @@ public class CourseworkSubmission extends AppCompatActivity {
         submit = findViewById(R.id.createcoursework);
 
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");
+        guidereff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/guidelines/");
         dbreff = FirebaseDatabase.getInstance().getReference();
 
         textView = findViewById(R.id.textView3);
         description = findViewById(R.id.description);
-        filename = findViewById(R.id.file);
+        filename = findViewById(R.id.studentUploadFileName);
         deadline = findViewById(R.id.deadline);
-
+        guide = findViewById(R.id.guide);
 
         textView.setText(MainActivity.coursework_name);
-
         update_page();
 
+        ArrayList<String> fileList = new ArrayList<>();
+
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                guidereff.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+
+                        for (StorageReference item : listResult.getItems()) {
+                            fileList.add(item.getName());
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+                String file_name = fileList.get(0);
+                StorageReference fileRef = guidereff.child(file_name);
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        // Use the URL with Uri.parse()
+                        String fileUrl = uri.toString();
+                        Uri parsedUri = Uri.parse(fileUrl);
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setType("application/pdf");
+                        intent.setData(parsedUri);
+                        startActivity(intent);
+                        Toast.makeText(CourseworkSubmission.this, "File downloaded", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(CourseworkSubmission.this, "File download failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
         selectfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

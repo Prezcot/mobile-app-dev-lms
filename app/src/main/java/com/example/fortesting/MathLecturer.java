@@ -251,8 +251,13 @@ public class MathLecturer extends AppCompatActivity {
                 cursor.close();
             }
         }
+        StorageReference reff;
+        if(show_list.equals("lectures")){
+            reff = folderRef.child(originalFileName);
+        }else{
+            reff = mfolderref.child(originalFileName);
+        }
 
-        StorageReference reff = folderRef.child(originalFileName);
         reff.putFile(data).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

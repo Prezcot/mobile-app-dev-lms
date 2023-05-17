@@ -54,7 +54,7 @@ public class CreateCoursework extends AppCompatActivity {
         date = findViewById(R.id.enterdate);
         selectguide = findViewById(R.id.selectguide);
         submit = findViewById(R.id.createcoursework);
-        filename = findViewById(R.id.file);
+        filename = findViewById(R.id.lecturerUploadFileName);
 
         dbreff = FirebaseDatabase.getInstance().getReference();
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");

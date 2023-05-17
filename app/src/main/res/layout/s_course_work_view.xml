@@ -52,13 +52,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/file"
+        android:id="@+id/guide"
         android:layout_width="377dp"
         android:layout_height="46dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/sketchy_download_icon"
         android:gravity="center"
-        android:text="Click here to download"
+        android:text="Click here to download guidelines"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
@@ -105,7 +105,7 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/file" />
+        app:layout_constraintTop_toBottomOf="@+id/guide" />
 
     <EditText
         android:id="@+id/studentUploadFileName"
