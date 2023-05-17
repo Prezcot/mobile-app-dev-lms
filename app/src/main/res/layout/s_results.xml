@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C5D0D0"
+    >
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bottom_nav_bar_shape_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_bar_menu" />
+
+    <include
+        android:id="@+id/nav_bar"
+        layout="@layout/top_nav_bar_menu"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="300dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_bar"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showDividers="middle"
+            android:dividerHeight="4dp">
+
+            <!-- Table Cell 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="#5C7474"
+                android:paddingRight="100dp"
+                android:text="Module"
+                android:textSize="34sp" />
+
+            <!-- Table Cell 2 -->
+            <TextView
+                android:layout_width="match_parent"
+
+
+                android:background="#5C7474"
+                android:text="Marks"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+        <!-- Table Row 2 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showDividers="middle"
+            android:dividerHeight="4dp">
+
+            <!-- Table Cell 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:paddingRight="100dp"
+                android:text="Math"
+                android:textSize="34sp" />
+
+            <!-- Table Cell 4 -->
+            <TextView
+                android:layout_width="135dp"
+                android:background="#FFFFFF"
+                android:text="21%"
+                android:textSize="34sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

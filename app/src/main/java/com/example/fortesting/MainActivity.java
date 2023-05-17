@@ -20,13 +20,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText name,pass;
-    public static String username;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Button button = findViewById(R.id.login_button); // Replace 'button' with the actual ID of your button
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform layout switch here
+                Intent intent = new Intent(MainActivity.this,l_course_work_creation.class); // Replace 'AnotherActivity' with the name of the activity you want to switch to
+                startActivity(intent);
+            }
+        });
     }
 }
