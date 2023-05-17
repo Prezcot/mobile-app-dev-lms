@@ -66,13 +66,14 @@ public class MathLecturer extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(show_list.equals("lectures")){
+                if(show_list.equals("lectures")||show_list.equals("Miscellaneous")){
                     selectpdf();
                 }
                 if(show_list.equals("coursework")){
                     startActivity(new Intent(MathLecturer.this,CreateCoursework.class));
                     finish();
                 }
+
             }
         });
         lectures.setOnClickListener(new View.OnClickListener() {
@@ -163,7 +164,7 @@ public class MathLecturer extends AppCompatActivity {
                 if(show_list.equals("lectures")){
                     StorageReference fileRef = folderRef.child(fileName);
 
-                    // Create a local file to save the downloaded file
+
 
                     fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
@@ -192,7 +193,7 @@ public class MathLecturer extends AppCompatActivity {
                 } else if (show_list.equals("miscellaneous")) {
                     StorageReference fileRef = mfolderref.child(fileName);
 
-                    // Create a local file to save the downloaded file
+
 
                     fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override

@@ -22,8 +22,6 @@ public class Dashboard extends AppCompatActivity {
 
         Math = findViewById(R.id.math);
         View includedLayout = findViewById(R.id.nav_bar);
-
-
         TextView textView = includedLayout.findViewById(R.id.textView2);
         textView.setText(MainActivity.username);
 
