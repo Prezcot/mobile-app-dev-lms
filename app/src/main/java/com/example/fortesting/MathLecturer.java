@@ -49,13 +49,13 @@ public class MathLecturer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transfiguration_lecturer);
+        setContentView(R.layout.l_module_view);
 
         dbreff = FirebaseDatabase.getInstance().getReference();
         folderRef = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Lecture/");
         mfolderref = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Miscellaneous/");
         ListView listView = findViewById(R.id.info);
-        lectures = findViewById(R.id.lectures);
+        lectures = findViewById(R.id.lecture);
         coursework = findViewById(R.id.coursework);
         miscellaneous= findViewById(R.id.miscellaneous);
         add = findViewById(R.id.add);

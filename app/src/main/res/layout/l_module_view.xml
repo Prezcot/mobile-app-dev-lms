@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/lecture"
         android:layout_width="137dp"
         android:layout_height="52dp"
         android:layout_marginStart="1dp"
@@ -54,12 +54,12 @@
         android:textColorHint="#00FFFFFF"
         android:textColorLink="#00FFFFFF"
         app:cornerRadius="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/coursework"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/coursework"
         android:layout_width="131dp"
         android:layout_height="52dp"
         android:layout_marginStart="1dp"
@@ -77,7 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/miscellaneous"
         android:layout_width="137dp"
         android:layout_height="52dp"
         android:layout_marginStart="1dp"
@@ -91,11 +91,11 @@
         android:textColorLink="#00FFFFFF"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintStart_toEndOf="@+id/coursework"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/add"
         android:layout_width="62dp"
         android:layout_height="48dp"
         android:layout_marginEnd="4dp"
@@ -111,9 +111,10 @@
         app:iconGravity="top|textStart"
         app:layout_constraintBottom_toTopOf="@+id/_dynamic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/miscellaneous" />
 
     <ListView
+        android:id="@+id/info"
         android:layout_width="405dp"
         android:layout_height="546dp"
         android:layout_marginStart="1dp"
@@ -123,7 +124,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

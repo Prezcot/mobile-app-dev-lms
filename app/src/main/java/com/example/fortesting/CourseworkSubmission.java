@@ -48,7 +48,7 @@ public class CourseworkSubmission extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coursework_submission);
+        setContentView(R.layout.s_course_work_view);
         selectfile = findViewById(R.id.selectfile);
         submit = findViewById(R.id.submit);
 

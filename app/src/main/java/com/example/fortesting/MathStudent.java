@@ -41,7 +41,7 @@ public class MathStudent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transfiguration_student);
+        setContentView(R.layout.s_module_view);
 
         dbreff = FirebaseDatabase.getInstance().getReference();
         folderRef = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Lecture/");
