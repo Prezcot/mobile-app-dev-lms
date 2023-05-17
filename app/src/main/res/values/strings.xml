@@ -1,5 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">fortesting</string>
     <string name="ek_img_content">ExportKit Image</string>
 	<string name="care_of_magical_string">Care of Basic</string>
@@ -16,7 +15,4 @@
 	<string name="dashboard_desc_label_string">Dashboard</string>
 	<string name="results_desc_label_string">Results</string>
 	<string name="calendar_desc_label_string">Calendar</string>
-=======
-    <string name="app_name">Madprojectfinal</string>
->>>>>>> 4ea4c893c9bd0871e4c05781328212c4fea371a4
 </resources>

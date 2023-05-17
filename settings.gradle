@@ -12,9 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-<<<<<<< HEAD
 rootProject.name = "fortesting"
-=======
-rootProject.name = "Madprojectfinal"
->>>>>>> 4ea4c893c9bd0871e4c05781328212c4fea371a4
 include ':app'
