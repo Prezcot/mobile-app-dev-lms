@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
 
     <Button
-        android:id="@+id/lecture"
+        android:id="@+id/leture"
         android:layout_width="137dp"
         android:layout_height="52dp"
         android:layout_marginStart="1dp"

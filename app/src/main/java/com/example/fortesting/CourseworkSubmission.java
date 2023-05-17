@@ -49,8 +49,8 @@ public class CourseworkSubmission extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.s_course_work_view);
-        selectfile = findViewById(R.id.selectfile);
-        submit = findViewById(R.id.submit);
+        selectfile = findViewById(R.id.selectguide);
+        submit = findViewById(R.id.createcoursework);
 
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");
         dbreff = FirebaseDatabase.getInstance().getReference();

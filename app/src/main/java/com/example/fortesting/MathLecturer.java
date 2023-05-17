@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -55,7 +56,7 @@ public class MathLecturer extends AppCompatActivity {
         folderRef = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Lecture/");
         mfolderref = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Miscellaneous/");
         ListView listView = findViewById(R.id.info);
-        lectures = findViewById(R.id.lecture);
+        lectures = findViewById(R.id.leture);
         coursework = findViewById(R.id.coursework);
         miscellaneous= findViewById(R.id.miscellaneous);
         add = findViewById(R.id.add);
@@ -77,6 +78,8 @@ public class MathLecturer extends AppCompatActivity {
         lectures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String message = "Hello, world!";
+                Log.d("Tag", message);
                 fileList.clear();
                 show_list = "lectures";
                 folderRef.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {

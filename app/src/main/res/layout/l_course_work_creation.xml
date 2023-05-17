@@ -98,7 +98,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/selectfile"
+        android:id="@+id/selectguide"
         android:layout_width="172dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
@@ -107,29 +107,29 @@
         android:text="Choose File"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/enterdate" />
 
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/createcoursework"
         android:layout_width="172dp"
         android:layout_height="70dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#5C7474"
-        android:text="Submit"
+        android:text="Create"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/enterdate" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/enterdate"
         android:layout_width="wrap_content"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Pick Date"
+        android:text="Pick Deadline Date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
