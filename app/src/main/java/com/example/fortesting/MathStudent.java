@@ -47,7 +47,7 @@ public class MathStudent extends AppCompatActivity {
         folderRef = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Lecture/");
         mfolderref = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Miscellaneous/");
         ListView listView = findViewById(R.id.info);
-        lectures = findViewById(R.id.lectures);
+        lectures = findViewById(R.id.lecture);
         coursework = findViewById(R.id.coursework);
         miscellaneous= findViewById(R.id.miscellaneous);
 

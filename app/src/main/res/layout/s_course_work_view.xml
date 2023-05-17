@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/description"
         android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -53,8 +53,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <View
-        android:id="@+id/view"
+    <TextView
+        android:id="@+id/file"
         android:layout_width="382dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -62,10 +62,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <Button
-        android:id="@+id/choose_file_button"
+        android:id="@+id/selectfile"
         android:layout_width="172dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
@@ -74,10 +74,10 @@
         android:text="Choose File"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/deadline" />
 
     <Button
-        android:id="@+id/submit_button"
+        android:id="@+id/submit"
         android:layout_width="172dp"
         android:layout_height="70dp"
         android:layout_marginTop="28dp"
@@ -86,10 +86,10 @@
         android:text="Submit"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/deadline" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/deadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -98,6 +98,6 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/file" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

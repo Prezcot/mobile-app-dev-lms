@@ -55,11 +55,11 @@ public class CourseworkSubmission extends AppCompatActivity {
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");
         dbreff = FirebaseDatabase.getInstance().getReference();
 
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textView3);
         description = findViewById(R.id.description);
         filename = findViewById(R.id.file);
         deadline = findViewById(R.id.deadline);
-        submission_status = findViewById(R.id.submission_status);
+
 
         textView.setText(MainActivity.coursework_name);
 
@@ -185,11 +185,10 @@ public class CourseworkSubmission extends AppCompatActivity {
                     String check_status = snapshot.child("submissionsmade").child(MainActivity.username).child("submissionstatus").getValue(String.class);
                     String check_filename = snapshot.child("submissionsmade").child(MainActivity.username).child("filename").getValue(String.class);
                     if(check_filename.equals(check_status)){
-                        submission_status.setText("Not submitted");
                         filename.setText("No file");
                     }
                     else{
-                        submission_status.setText(check_status);
+                        deadline.setText(check_status);
                         filename.setText(check_filename);
                     }
 

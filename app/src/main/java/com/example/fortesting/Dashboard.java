@@ -21,20 +21,24 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.dashboard);
 
         Math = findViewById(R.id.math);
+        View includedLayout = findViewById(R.id.nav_bar);
+
+
+        TextView textView = includedLayout.findViewById(R.id.textView2);
+        textView.setText(MainActivity.username);
+
         Math.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                View includedLayout = findViewById(R.id.nav_bar);
-
-                // Find the TextView within the included layout
-                TextView textView = includedLayout.findViewById(R.id.textView2);
-
-                // Set the new text value
-                textView.setText(MainActivity.username);
                 MainActivity.module = "Mathematics";
-                startActivity(new Intent(Dashboard.this, MathStudent.class));
-                finish();
+                if(MainActivity.account_type.equals("admin")){
+                    startActivity(new Intent(Dashboard.this, MathLecturer.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(Dashboard.this, MathStudent.class));
+                    finish();
+                }
+
             }
         });
 

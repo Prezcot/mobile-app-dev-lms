@@ -48,7 +48,7 @@ public class CreateCoursework extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_coursework);
+        setContentView(R.layout.l_course_work_creation);
         title = findViewById(R.id.entertitle);
         description = findViewById(R.id.enterdescripton);
         date = findViewById(R.id.enterdate);
