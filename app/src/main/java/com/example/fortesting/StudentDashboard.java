@@ -15,7 +15,7 @@ public class StudentDashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lecturer_dashboard);
+        setContentView(R.layout.dashboard);
 
         transfiguration = findViewById(R.id.Transfiguration);
 

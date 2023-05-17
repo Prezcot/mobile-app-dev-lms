@@ -67,6 +67,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/login_details_entry_background"
             android:hint="Password"
+            android:inputType="textPassword"
             tools:layout_editor_absoluteX="57dp"
             tools:layout_editor_absoluteY="605dp" />
     </com.google.android.material.textfield.TextInputLayout>
