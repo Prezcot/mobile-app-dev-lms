@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,27 +60,9 @@ public class LecturerCourseworkSubmission extends AppCompatActivity {
         coursework = findViewById(R.id.Courseworktitle);
         listView = findViewById(R.id.ListCoursework);
 
-        coursework.setText(MainActivity.coursework_name);
-
         ArrayList<String> fileList = new ArrayList<>();
 
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/"+MainActivity.coursework_name+"/submissions/");
-
-        View includedLayout = findViewById(R.id.nav_bar);
-        ImageButton back = includedLayout.findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(MainActivity.account_type.equals("admin")){
-                    startActivity(new Intent(LecturerCourseworkSubmission.this, MathLecturer.class));
-                    finish();
-                }else{
-                    startActivity(new Intent(LecturerCourseworkSubmission.this, MathStudent.class));
-                    finish();
-                }
-
-            }
-        });
 
         cwreff.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
             @Override
