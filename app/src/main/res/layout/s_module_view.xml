@@ -56,7 +56,9 @@
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toStartOf="@+id/coursework"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+
+        />
 
     <Button
         android:id="@+id/coursework"

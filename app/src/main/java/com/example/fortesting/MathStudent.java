@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -93,6 +95,16 @@ public class MathStudent extends AppCompatActivity {
         lectures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                ColorStateList colorStateList1 = ColorStateList.valueOf(Color.GRAY);
+                lectures.setBackgroundTintList(colorStateList1);
+                ColorStateList colorStateList2 = ColorStateList.valueOf(Color.TRANSPARENT);
+                coursework.setBackgroundTintList(colorStateList2);
+                ColorStateList colorStateList3 = ColorStateList.valueOf(Color.TRANSPARENT);
+                miscellaneous.setBackgroundTintList(colorStateList3);
+
+
                 fileList.clear();
                 show_list = "lectures";
                 folderRef.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
@@ -118,6 +130,15 @@ public class MathStudent extends AppCompatActivity {
         coursework.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                ColorStateList colorStateList1 = ColorStateList.valueOf(Color.TRANSPARENT);
+                lectures.setBackgroundTintList(colorStateList1);
+                ColorStateList colorStateList2 = ColorStateList.valueOf(Color.GRAY);
+                coursework.setBackgroundTintList(colorStateList2);
+                ColorStateList colorStateList3 = ColorStateList.valueOf(Color.TRANSPARENT);
+                miscellaneous.setBackgroundTintList(colorStateList3);
+
+
                 fileList.clear();
 
                 show_list = "coursework";
@@ -144,6 +165,16 @@ public class MathStudent extends AppCompatActivity {
         miscellaneous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                ColorStateList colorStateList1 = ColorStateList.valueOf(Color.TRANSPARENT);
+                lectures.setBackgroundTintList(colorStateList1);
+                ColorStateList colorStateList2 = ColorStateList.valueOf(Color.TRANSPARENT);
+                coursework.setBackgroundTintList(colorStateList2);
+                ColorStateList colorStateList3 = ColorStateList.valueOf(Color.GRAY);
+                miscellaneous.setBackgroundTintList(colorStateList3);
+
+
                 fileList.clear();
                 show_list = "Miscellaneous";
                 mfolderref.listAll().addOnSuccessListener(new OnSuccessListener<ListResult>() {
