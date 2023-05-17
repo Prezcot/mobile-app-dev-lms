@@ -34,24 +34,14 @@ public class Results extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigation_results);
-
-
+        
         TableLayout tableLayout = findViewById(R.id.results);
-
 
         TableRow row2 = (TableRow) tableLayout.getChildAt(1);
         math = (TextView) row2.getChildAt(1);
 
-
-
-
-
         TableRow row3 = (TableRow) tableLayout.getChildAt(2);
         english = (TextView) row3.getChildAt(1);
-
-
-
-
 
         dbreff = FirebaseDatabase.getInstance().getReference();
 

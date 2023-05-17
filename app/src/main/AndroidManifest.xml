@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Fortesting"
         tools:targetApi="31">
         <activity
-            android:name=".LecturerCourseworkSubmission"
+            android:name=".LecturerCourseworkView"
             android:exported="false" />
         <activity
             android:name=".Results"

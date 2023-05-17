@@ -91,14 +91,8 @@ public class CreateCoursework extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MainActivity.account_type.equals("admin")){
-                    startActivity(new Intent(CreateCoursework.this, MathLecturer.class));
-                    finish();
-                }else{
-                    startActivity(new Intent(CreateCoursework.this, MathStudent.class));
-                    finish();
-                }
-
+                startActivity(new Intent(CreateCoursework.this, MathLecturer.class));
+                finish();
             }
         });
 

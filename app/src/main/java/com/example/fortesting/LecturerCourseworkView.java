@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +24,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class LecturerCourseworkSubmission extends AppCompatActivity {
+public class LecturerCourseworkView extends AppCompatActivity {
     TextView coursework;
     ListView listView;
 
@@ -34,7 +35,15 @@ public class LecturerCourseworkSubmission extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.l_course_work_view);
 
-
+        View includedLayout = findViewById(R.id.nav_bar);
+        ImageButton back = includedLayout.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LecturerCourseworkView.this, MathLecturer.class));
+                finish();
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -72,7 +81,7 @@ public class LecturerCourseworkSubmission extends AppCompatActivity {
                     fileList.add(item.getName());
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(LecturerCourseworkSubmission.this, android.R.layout.simple_list_item_1, fileList);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(LecturerCourseworkView.this, android.R.layout.simple_list_item_1, fileList);
 
                 listView.setAdapter(adapter);
             }
@@ -97,13 +106,13 @@ public class LecturerCourseworkSubmission extends AppCompatActivity {
                         intent.setType("application/pdf");
                         intent.setData(parsedUri);
                         startActivity(intent);
-                        Toast.makeText(LecturerCourseworkSubmission.this, "File downloaded", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LecturerCourseworkView.this, "File downloaded", Toast.LENGTH_SHORT).show();
 
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LecturerCourseworkSubmission.this, "File download failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LecturerCourseworkView.this, "File download failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
