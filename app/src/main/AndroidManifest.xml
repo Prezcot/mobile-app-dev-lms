@@ -17,12 +17,6 @@
         android:theme="@style/Theme.Fortesting"
         tools:targetApi="31">
         <activity
-            android:name=".home2"
-            android:exported="false" />
-        <activity
-            android:name=".home1"
-            android:exported="false" />
-        <activity
             android:name=".l_course_work_creation"
             android:exported="false" />
         <activity
