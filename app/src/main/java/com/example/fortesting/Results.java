@@ -75,6 +75,14 @@ public class Results extends AppCompatActivity {
                 finish();
             }
         });
+        ImageButton logout = includedLayout.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -42,9 +42,6 @@
             android:name=".WebCalendar"
             android:exported="false" />
         <activity
-            android:name=".Logout"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -90,7 +90,14 @@ public class MathStudent extends AppCompatActivity {
                 finish();
             }
         });
-
+        ImageButton logout = includedLayout.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
 
         lectures.setOnClickListener(new View.OnClickListener() {
             @Override
