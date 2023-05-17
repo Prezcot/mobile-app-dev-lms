@@ -8,10 +8,23 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class Results extends AppCompatActivity {
+    TextView math,english;
+    DatabaseReference dbreff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +34,47 @@ public class Results extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.navigation_results);
+
+
+        TableLayout tableLayout = findViewById(R.id.results);
+
+
+        TableRow row2 = (TableRow) tableLayout.getChildAt(1);
+        math = (TextView) row2.getChildAt(1);
+
+
+
+
+
+        TableRow row3 = (TableRow) tableLayout.getChildAt(2);
+        english = (TextView) row3.getChildAt(1);
+
+
+
+
+
+        dbreff = FirebaseDatabase.getInstance().getReference();
+
+        try {
+            dbreff.child("Account").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String addmath = snapshot.child(MainActivity.username).child("math").getValue(String.class);
+                    String addenglish = snapshot.child(MainActivity.username).child("english").getValue(String.class);
+                    math.setText(addmath);
+                    english.setText(addenglish);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+        }catch (Exception e){
+            Toast.makeText(Results.this, "Please submit coursework",Toast.LENGTH_SHORT).show();
+        }
 
         View includedLayout = findViewById(R.id.nav_bar);
         ImageButton back = includedLayout.findViewById(R.id.back);

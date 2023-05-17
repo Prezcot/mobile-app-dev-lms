@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
+        android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -81,9 +82,33 @@
 
             <!-- Table Cell 4 -->
             <TextView
+                android:id="@+id/math_marks"
                 android:layout_width="135dp"
                 android:background="#FFFFFF"
-                android:text="21%"
+                android:text=""
+                android:textSize="34sp" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showDividers="middle"
+            android:dividerHeight="4dp">
+
+            <!-- Table Cell 3 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:background="#FFFFFF"
+                android:paddingRight="100dp"
+                android:text="English"
+                android:textSize="34sp" />
+
+            <!-- Table Cell 4 -->
+            <TextView
+                android:id="@+id/english_marks"
+                android:layout_width="135dp"
+                android:background="#FFFFFF"
+                android:text=""
                 android:textSize="34sp" />
 
         </TableRow>
