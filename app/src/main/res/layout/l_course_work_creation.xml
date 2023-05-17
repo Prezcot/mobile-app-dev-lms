@@ -40,10 +40,10 @@
         app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="14dp"
         app:boxStrokeColor="#5C7474"
         app:boxStrokeWidth="2dp"
@@ -67,22 +67,22 @@
         android:layout_width="170dp"
         android:layout_height="43dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="16dp"
         android:text="Description:"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="14dp"
         app:boxStrokeColor="#5C7474"
         app:boxStrokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -99,30 +99,26 @@
 
     <Button
         android:id="@+id/selectguide"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="39dp"
+        android:layout_marginEnd="60dp"
         android:backgroundTint="#5C7474"
         android:text="Choose File"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/lecturerUploadFileName"
         app:layout_constraintEnd_toStartOf="@+id/createcoursework"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterdate" />
 
     <Button
         android:id="@+id/createcoursework"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="12dp"
         android:backgroundTint="#5C7474"
         android:text="Create"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/lecturerUploadFileName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/selectguide"
         app:layout_constraintTop_toBottomOf="@+id/enterdate" />
@@ -132,26 +128,27 @@
         android:layout_width="wrap_content"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         android:ems="10"
         android:inputType="text"
         android:text="Pick Deadline Date"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-    <EditText
+    <TextView
         android:id="@+id/lecturerUploadFileName"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="118dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="218dp"
         android:background="#00FFFFFF"
         android:ems="10"
         android:inputType="text"
         android:text="No file"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectguide" />
+        app:layout_constraintTop_toBottomOf="@+id/selectguide"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
