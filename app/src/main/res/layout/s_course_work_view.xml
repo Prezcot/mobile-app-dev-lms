@@ -33,10 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="33dp"
-        android:layout_marginEnd="153dp"
         android:text="Coursework title"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
 
@@ -55,10 +53,13 @@
 
     <TextView
         android:id="@+id/file"
-        android:layout_width="382dp"
-        android:layout_height="60dp"
+        android:layout_width="377dp"
+        android:layout_height="46dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/login_details_entry_background"
+        android:background="@drawable/sketchy_download_icon"
+        android:gravity="center"
+        android:text="Click here to download"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,26 +67,32 @@
 
     <Button
         android:id="@+id/selectguide"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="41dp"
         android:backgroundTint="#5C7474"
         android:text="Choose File"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/studentUploadFileName"
+        app:layout_constraintEnd_toStartOf="@+id/createcoursework"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deadline" />
 
     <Button
         android:id="@+id/createcoursework"
-        android:layout_width="172dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
+        android:layout_marginStart="41dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="14dp"
         android:backgroundTint="#5C7474"
         android:text="Submit"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/studentUploadFileName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectguide"
         app:layout_constraintTop_toBottomOf="@+id/deadline" />
 
     <TextView
@@ -100,4 +107,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/file" />
 
+    <EditText
+        android:id="@+id/studentUploadFileName"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="250dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        android:text="No file"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectguide" />
 </androidx.constraintlayout.widget.ConstraintLayout>
