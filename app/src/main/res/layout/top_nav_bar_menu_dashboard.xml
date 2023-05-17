@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_bar_shape_background"
+    android:elevation="6dp">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleX="1.1"
+        android:scaleY="1.1"
+        android:src="@drawable/profile_pic"
+        android:translationX="320dp"
+        android:translationY="1dp" />
+
+
+
+
+    <!--<ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleX="1.4"
+        android:scaleY="1.4"
+        android:src="@drawable/back_button"
+        android:translationX="-70dp" />-->
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Welcome, "
+        android:textColor="#D8D8D8"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:translationX="-50dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Name "
+        android:textColor="#D8D8D8"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:translationX="-50dp" />
+
+</androidx.appcompat.widget.Toolbar>
