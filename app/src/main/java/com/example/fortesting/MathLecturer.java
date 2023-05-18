@@ -96,6 +96,11 @@ public class MathLecturer extends AppCompatActivity {
 
         View includedLayout = findViewById(R.id.nav_bar);
         ImageButton back = includedLayout.findViewById(R.id.back);
+
+
+
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -349,6 +354,12 @@ public class MathLecturer extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(MathLecturer.this, Dashboard.class));
+        finish();
+    }
+
 
 
 }

@@ -50,7 +50,7 @@ public class CourseworkSubmission extends AppCompatActivity {
     int upload_status = 0;
 
 
-    Uri file;
+    Uri file = null;
 
 
     @Override
@@ -165,20 +165,35 @@ public class CourseworkSubmission extends AppCompatActivity {
         selectfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                select();
+                String check_filename = filename.getText().toString();
+                if(check_filename.equals("No file")){
+
+                    select();
+                } else{
+                    Toast.makeText(CourseworkSubmission.this, "Resubmissions not possible",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String check_filename = filename.toString();
+                String check_filename = filename.getText().toString();
 
-                if(check_filename.equals("No file")){
+                try {
+                    if(file == null){
+                        if(check_filename.equals("No file")){
+                            Toast.makeText(CourseworkSubmission.this, "Select file",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(CourseworkSubmission.this, "Resubmissions not possible",Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else{
+                        upload(file);
+
+                    }
+                }catch (Exception e){
                     Toast.makeText(CourseworkSubmission.this, "Select file",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    upload(file);
-
                 }
             }
         });
@@ -300,12 +315,17 @@ public class CourseworkSubmission extends AppCompatActivity {
 
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CourseworkSubmission.this, MathStudent.class));
+        finish();
+    }
+
 
 }

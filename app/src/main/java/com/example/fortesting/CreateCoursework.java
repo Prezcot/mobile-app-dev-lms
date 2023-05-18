@@ -45,7 +45,7 @@ public class CreateCoursework extends AppCompatActivity {
 
     String originalFileName;
     String selectedDate;
-    Uri file;
+    Uri file = null;
 
 
     @Override
@@ -117,15 +117,22 @@ public class CreateCoursework extends AppCompatActivity {
                 String check_title = title.getText().toString();
                 String check_description = description.getText().toString();
                 String check_date = date.getText().toString();
-                String check_filename = filename.toString();
+                try{
+                    if(check_title.isEmpty() || check_description.isEmpty()){
+                        Toast.makeText(CreateCoursework.this, "Enter all fields",Toast.LENGTH_SHORT).show();
+                    } else if(check_date.equals("Pick Deadline Date")){
+                        Toast.makeText(CreateCoursework.this, "Select date",Toast.LENGTH_SHORT).show();
+                    } else if(file == null){
+                        Toast.makeText(CreateCoursework.this, "Select file",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        upload(file);
 
-                if(check_title.isEmpty() || check_description.isEmpty() || check_date.isEmpty()||check_filename.equals("No file")){
-                    Toast.makeText(CreateCoursework.this, "Enter all fields",Toast.LENGTH_SHORT).show();
+                    }
+                }catch(Exception e){
+                    return;
                 }
-                else{
-                    upload(file);
 
-                }
             }
         });
 
@@ -217,4 +224,10 @@ public class CreateCoursework extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CreateCoursework.this, MathLecturer.class));
+        finish();
+    }
+
 }

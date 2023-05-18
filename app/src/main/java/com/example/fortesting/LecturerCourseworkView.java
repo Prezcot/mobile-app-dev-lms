@@ -129,4 +129,9 @@ public class LecturerCourseworkView extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(LecturerCourseworkView.this, MathLecturer.class));
+        finish();
+    }
 }

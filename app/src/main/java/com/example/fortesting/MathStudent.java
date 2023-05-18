@@ -269,8 +269,11 @@ public class MathStudent extends AppCompatActivity {
         });
 
     }
-
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(MathStudent.this, Dashboard.class));
+        finish();
+    }
 
 }
 
