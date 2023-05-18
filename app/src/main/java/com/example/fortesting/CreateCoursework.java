@@ -86,6 +86,10 @@ public class CreateCoursework extends AppCompatActivity {
         dbreff = FirebaseDatabase.getInstance().getReference();
         cwreff = FirebaseStorage.getInstance().getReference("Module/"+MainActivity.module+"/Coursework/");
 
+        date.setFocusable(false);
+        date.setClickable(true);
+        date.setFocusableInTouchMode(false);
+
         View includedLayout = findViewById(R.id.nav_bar);
         ImageButton back = includedLayout.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
