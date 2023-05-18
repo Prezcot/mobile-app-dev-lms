@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
@@ -285,6 +286,9 @@ public class CourseworkSubmission extends AppCompatActivity {
                     }
                     else{
                         deadline.setText(check_status);
+                        if(check_status.equals("submitted")){
+                            deadline.setTextColor(Color.rgb(1, 100, 32));
+                        }
                         filename.setText(check_filename);
                     }
 
