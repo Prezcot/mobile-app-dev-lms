@@ -1,3 +1,3 @@
 # mobile-app-dev-lms
 
-# HI
+# We were inexperienced please excuse the innacurate commit messages
